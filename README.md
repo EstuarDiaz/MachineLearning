@@ -1,6 +1,5 @@
 # Seminario de matematica aplicada
 ## Blog sobre inteligencia artificial y aprendizaje de maquina
-### FERMAT
 
 You can use the [editor on GitHub](https://github.com/EstuarDiaz/MachineLearning/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
