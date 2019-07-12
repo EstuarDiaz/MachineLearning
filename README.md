@@ -1,4 +1,5 @@
-## Welcome to GitHub Pages
+## Seminario de matematica aplicada
+## Blog sobre inteligencia artificial y aprendizaje de maquina
 
 You can use the [editor on GitHub](https://github.com/EstuarDiaz/MachineLearning/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
