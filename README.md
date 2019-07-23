@@ -1,3 +1,4 @@
+{% include mathjax.html %}
 # Seminario de matematica aplicada
 ## Blog sobre inteligencia artificial y aprendizaje de maquina
 
