@@ -1,7 +1,6 @@
 {% include mathjax.html %}
 # Introducción al modelo de aprendizaje PAC
-Ejercicio 3 del capítulo 2 de Understanding machine learning.
-Para ver el código del programa realizado visita este link: [https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb]
+Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
 
 ### Especificamos una parametrización del espacio de hipótesis.
 
@@ -76,45 +75,3 @@ Graficamos los errores de generalización $$L(D,f)$$ y empírico $$LS$$ para cad
 ### Si seleccionas un valor $$\epsilon$$ del error de generalización $$L(D,f)$$, ¿cuántos puntos del histograma tienen error de generalización menor a $$\epsilon$$?
 
 ### ¿Qué dice en este caso el resultado de que las clases de hipótesis finitas son PAC aprendibles con complejidad de muestra $$log(|H|/\delta)/\epsilon$$?
-
-
-### LaTex
-Let $$\epsilon > 0$$
-
-### Github
-You can use the [editor on GitHub](https://github.com/EstuarDiaz/MachineLearning/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-[https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb]
-[Link](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb) and ![Image](src)
-$$\epsilon > 0$$
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/EstuarDiaz/MachineLearning/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
