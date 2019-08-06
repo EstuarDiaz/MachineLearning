@@ -3,10 +3,17 @@
 Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
 
 ### Especificamos una parametrización del espacio de hipótesis.
+Sea $$H = \{R(x_1,y_1,x_2,y_2) : x_1=y_1, 0 \leq x_1 <x_2 \leq 2,  0 \leq y_1 <y_2 \leq 2\}$$
 
 ### ¿Cuál es el tamaño del espacio de hipótesis?
+Sea $$\Delta = 0.01$$. Calculemos $$|H|$$:
+ - Tenemos que $$x_1 = y_1$$ pueden tomar $$2/\Delta$$ valores
+ - Luego, $$x_2,y_2$$ pueden tomar $$\frac{2-x_1}{\Delta}$$ valores
+Entonces $$|H| = \Big(\sum_{k=0}^{2/\Delta-1} \frac{2-k\Delta}{\Delta}\Big)^2 =  \Big(\sum_{k=0}^{2/\Delta-1} \frac{2}{\Delta} - k\Big)^2 = \Big(\frac{2}{\Delta}\sum_{k=0}^{2/\Delta-1} 1 - \sum_{k=0}^{2/\Delta-1} k\Big)^2 $$ $$=  \Big(\frac{2}{\Delta}^2  - \frac{2/\Delta(2/\Delta -1)}{2}\Big)^2 = \Big(\frac{4}{\Delta^2} - \frac{2/\Delta - 1}{\Delta}\Big)^2 = \Big(\frac{4-2+\Delta}{\Delta^2} \Big)^2 = \Big(\frac{2+\Delta}{\Delta^2} \Big)^2$$
+Por lo tanto, $$|H| = \Big(\frac{2+\Delta}{\Delta^2} \Big)^2 = \Big(\frac{2+0.01}{0.01^2} \Big)^2 = 404,010,000$$
 
 ### Calculamos la probabilidad de extraer un ejemplo en cada una de las clases.
+Por un lado, $$ P(x \in X_1) = \frac{(\frac{2}{\sqrt 2})^2}{2^2} = \frac{1}{2}$$ Por otro lado, $$P(x \in X_0) = 1 - P(x \in X_1) = 1 - \frac{1}{2} = \frac{1}{2}$$ 
 
 ### En python, definimos un conjunto de métodos que realizan las siguientes tareas: 
 a) Formar conjuntos de entrenamiento $$S$$ con $$m$$ elementos
@@ -65,8 +72,11 @@ def ERM(H,S):
 ```
 
 ### Simplifiquemos la clase de hipótesis finitas a rectángulos con lados paralelos a los lados de $$X$$, centrados en $$X$$. 
+### ¿Cuál es el tamaño de $$H$$? 
+La nueva clase de hipótesis esta definida por $$H = \{R(x_1,y_1,x_2,y_2) : x_1=y_1,x_2 = y_2, x_2 = 2 - x_1, y_2 = 2-y_1\}$$
+Entonces $$|H| = \frac{2}{2\Delta} = \frac{1}{\Delta} = \frac{1}{0.01} = 100$$.
 
-¿Cuál es el tamaño de $$H$$? 
+La complejidad de la muestra $$mH$$ para $$\delta = 0.05, \epsilon = 0.01$$ es $$mH = ln(|H|/\delta)/\epsilon = ln(100/0.05)/0.01 \approx 760$$
 Formamos un conjunto de entrenamiento con $$m$$ elementos, para $$m=e^0,e^{1/2},e^1,…,mH$$, donde $$mH$$ es la complejidad de $$S$$ para un parámetro de confianza y un error de 0.01. Graficamos los puntos de cada conjunto de entrenamiento. 
 Graficamos los errores de generalización $$L(D,f)$$ y empírico $$LS$$ para cada hipótesis en $$H$$. Obtén algún rectángulo hS que minimice $$LS$$ y grafícalo en $$X$$.
 
