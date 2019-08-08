@@ -68,7 +68,7 @@ def LS(h,S):
 error = 0
 d = 1/np.sqrt(2)
 for i in range(len(S)): # Si h lo calsifica como elemento de X1
-inX0 = ((S[i][0] < 1-d) or (S[i][1] < 1-d) or (S[i][0] > 1+d) or (S[i][1] > 1+d))
+inX0 = ((S[i][0] < 1-d ) or (S[i][1] < 1-d) or (S[i][0] > 1+d) or (S[i][1] > 1+d))
 if ((S[i][0] > h) and (S[i][1] > h) and (S[i][0] < 2-h) and (S[i][1] < 2-h)): # Y no pertenece a X1
 if inX0:
 error = error+1 # Si h lo clasifica como elemento de X0
@@ -82,14 +82,14 @@ return error/len(S)
 def LD(h):
 lim = 1-1/np.sqrt(2)
 if h < lim:
-return 1/2-2*h+h\*\*2
+return 1/2-2*h+h^2
 elif h > lim:
-return -1/2+2*h-h\*\*2
+return -1/2+2*h-h^2
 else:
 return 0
 ```
 
-d) Seleccionar al rectángulo ERMH.
+d) Seleccionar al rectángulo ERM.
 
 ```markdown
 # Obtener una hipotesis que minimize el error empirico
@@ -109,11 +109,12 @@ return EMRh
 
 La complejidad de la muestra $$m_H$$ para $$\delta = 0.05, \epsilon = 0.01$$ es $$m_H = ln(\mid H \mid/\delta)/\epsilon = ln(100/0.05)/0.01 \approx 760$$.
 
-Formamos un conjunto de entrenamiento con $$m$$ elementos, para $$m=e^0,e^{1/2},e^1,…,mH$$. Para cada uno de estos conjuntos de entrenamiento, graficamos los puntos seleccionados en $$X$$ y la hipótesis resultante del proceso ERM. Podemos notar cómo es que a mayor cantidad de muestras, la hipótesis obtenida se acerca cada ver al valor real. Para una muestra de 665 puntos, la $$h_S$$ obtenida es $$0.029293...$$, miestras que el valor real es de $$0.29289...$$.
+Formamos un conjunto de entrenamiento con $$m$$ elementos, para $$m=e^0,e^{1/2},e^1,…,mH$$. Para cada uno de estos conjuntos de entrenamiento, graficamos los puntos seleccionados en $$X$$ y la hipótesis resultante del proceso ERM. Podemos notar cómo es que a mayor cantidad de muestras, la hipótesis obtenida se acerca cada ver al valor real. Para una muestra de 665 puntos, la $$h_S$$ obtenida es $$0.029293...$$, mientras que el valor real es de $$0.29289...$$.
 ![Image](Muestras1.png)
 ![Image](Muestras2.png)
 
 Ahora, graficamos los errores de generalización $$L(D,f)$$ y empírico $$LS$$ para cada hipótesis en $$H$$. Nótese que el error de generalización tiene un mínimo, 0, justo en $$1-\frac{1}{\sqrt 2} = 0.29289...$$. Además, los errores empíricos aproximan bastante bien al error de generalización, que es lo que se espera que pase para muestras suficientemente grandes.
+
 ![Image](LSvsLD.png)
 
 ### Errores de generalización para distintos tamaños de muestra
