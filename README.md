@@ -16,13 +16,13 @@ Sea $$H = \{R(x_1,y_1,x_2,y_2) : x_1=y_1, 0 \leq x_1 < x_2 \leq 2,  0 \leq y_1 <
 
 ### ¿Cuál es el tamaño del espacio de hipótesis?
 
-Sea $$\Delta = 0.01$$. Calculemos $$|H|$$:
+Sea $$\Delta = 0.01$$. Calculemos $$ \mid H \mid $$:
 
 - Tenemos que $$x_1 = y_1$$ pueden tomar $$2/\Delta$$ valores
 - Luego, $$x_2,y_2$$ pueden tomar $$\frac{2-x_1}{\Delta}$$ valores
-  Entonces $$|H| = \Big(\sum_{k=0}^{2/\Delta-1} \frac{2-k\Delta}{\Delta}\Big)^2 =  \Big(\sum_{k=0}^{2/\Delta-1} \frac{2}{\Delta} - k\Big)^2 = \Big(\frac{2}{\Delta}\sum_{k=0}^{2/\Delta-1} 1 - \sum_{k=0}^{2/\Delta-1} k\Big)^2 $$ $$=  \Big(\frac{2}{\Delta}^2  - \frac{2/\Delta(2/\Delta -1)}{2}\Big)^2 = \Big(\frac{4}{\Delta^2} - \frac{2/\Delta - 1}{\Delta}\Big)^2 = \Big(\frac{4-2+\Delta}{\Delta^2} \Big)^2 = \Big(\frac{2+\Delta}{\Delta^2} \Big)^2$$
+  Entonces $$\mid H \mid = \Big(\sum_{k=0}^{2/\Delta-1} \frac{2-k\Delta}{\Delta}\Big)^2 =  \Big(\sum_{k=0}^{2/\Delta-1} \frac{2}{\Delta} - k\Big)^2 = \Big(\frac{2}{\Delta}\sum_{k=0}^{2/\Delta-1} 1 - \sum_{k=0}^{2/\Delta-1} k\Big)^2 $$ $$=  \Big(\frac{2}{\Delta}^2  - \frac{2/\Delta(2/\Delta -1)}{2}\Big)^2 = \Big(\frac{4}{\Delta^2} - \frac{2/\Delta - 1}{\Delta}\Big)^2 = \Big(\frac{4-2+\Delta}{\Delta^2} \Big)^2 = \Big(\frac{2+\Delta}{\Delta^2} \Big)^2$$
 
-Por lo tanto, $$|H| = \Big(\frac{2+\Delta}{\Delta^2} \Big)^2 = \Big(\frac{2+0.01}{0.01^2} \Big)^2 = 404,010,000$$
+Por lo tanto, $$ \mid H \mid = \Big(\frac{2+\Delta}{\Delta^2} \Big)^2 = \Big(\frac{2+0.01}{0.01^2} \Big)^2 = 404,010,000$$
 
 ### Simplifiquemos la clase de hipótesis finitas a rectángulos con lados paralelos a los lados de $$X$$, centrados en $$X$$.
 
@@ -31,7 +31,7 @@ Como podemos notar, el tamaño de la clase de hipótesis propuesta es demasiado 
 ### ¿Cuál es el tamaño de $$H$$?
 
 La nueva clase de hipótesis esta definida por $$H = \{R(x_1,y_1,x_2,y_2) : x_1=y_1,x_2 = y_2, x_2 = 2 - x_1, y_2 = 2-y_1\}$$
-Entonces $$|H| = \frac{2}{2\Delta} = \frac{1}{\Delta} = \frac{1}{0.01} = 100$$.
+Entonces $$\mid H \mid = \frac{2}{2\Delta} = \frac{1}{\Delta} = \frac{1}{0.01} = 100$$.
 
 ### Calculamos la probabilidad de extraer un ejemplo en cada una de las clases.
 
@@ -107,7 +107,7 @@ return EMRh
 
 ### Complejidad de la muestra
 
-La complejidad de la muestra $$m_H$$ para $$\delta = 0.05, \epsilon = 0.01$$ es $$m_H = ln(|H|/\delta)/\epsilon = ln(100/0.05)/0.01 \approx 760$$.
+La complejidad de la muestra $$m_H$$ para $$\delta = 0.05, \epsilon = 0.01$$ es $$m_H = ln(\mid H \mid/\delta)/\epsilon = ln(100/0.05)/0.01 \approx 760$$.
 
 Formamos un conjunto de entrenamiento con $$m$$ elementos, para $$m=e^0,e^{1/2},e^1,…,mH$$. Para cada uno de estos conjuntos de entrenamiento, graficamos los puntos seleccionados en $$X$$ y la hipótesis resultante del proceso ERM. Podemos notar cómo es que a mayor cantidad de muestras, la hipótesis obtenida se acerca cada ver al valor real. Para una muestra de 665 puntos, la $$h_S$$ obtenida es $$0.029293...$$, miestras que el valor real es de $$0.29289...$$.
 ![Image](Muestras1.png)
@@ -125,4 +125,4 @@ Para cada valor de $$m$$, formamos 1000 conjuntos de entrenamiento, selecciona $
 
 ### Conclusión
 
-Como podemos observar en los resultados obtenidos, la complejidad de la muestra $$m_H = log(|H|/\delta)/\epsilon$$ nos da en la práctica el número de muestras suficientes para asegurarnos que el error de generalización obtenido con el proceso de ERM sea menor que $$\epsilon$$ casi siempre (o con probabilidad de $$1-\delta$$). Y esto es justamente lo que queríamos comprobar de la teoría.
+Como podemos observar en los resultados obtenidos, la complejidad de la muestra $$m_H = log(\mid H \mid/\delta)/\epsilon$$ nos da en la práctica el número de muestras suficientes para asegurarnos que el error de generalización obtenido con el proceso de ERM sea menor que $$\epsilon$$ casi siempre (o con probabilidad de $$1-\delta$$). Y esto es justamente lo que queríamos comprobar de la teoría.
