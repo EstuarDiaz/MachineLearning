@@ -1,6 +1,14 @@
 {% include mathjax.html %}
 # Introducción al modelo de aprendizaje PAC
 Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
+![Image](LD1.png)
+![LD1.png](src)
+![LD1.png](LD1.png)
+```markdown
+![Image](LD1.png)
+![LD1.png](src)
+![LD1.png](LD1.png)
+```
 
 ### Especificamos una parametrización del espacio de hipótesis.
 Sea $$H = \{R(x_1,y_1,x_2,y_2) : x_1=y_1, 0 \leq x_1 <x_2 \leq 2,  0 \leq y_1 <y_2 \leq 2\}$$
