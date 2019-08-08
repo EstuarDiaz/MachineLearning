@@ -1,14 +1,6 @@
 {% include mathjax.html %}
 # Introducción al modelo de aprendizaje PAC
 Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
-![Image](LD1.png)
-![LD1.png](src)
-![LD1.png](LD1.png)
-```markdown
-![Image](LD1.png)
-![LD1.png](src)
-![LD1.png](LD1.png)
-```
 
 ### Especificamos una parametrización del espacio de hipótesis.
 Sea $$H = \{R(x_1,y_1,x_2,y_2) : x_1=y_1, 0 \leq x_1 <x_2 \leq 2,  0 \leq y_1 <y_2 \leq 2\}$$
@@ -87,8 +79,15 @@ Entonces $$|H| = \frac{2}{2\Delta} = \frac{1}{\Delta} = \frac{1}{0.01} = 100$$.
 La complejidad de la muestra $$mH$$ para $$\delta = 0.05, \epsilon = 0.01$$ es $$mH = ln(|H|/\delta)/\epsilon = ln(100/0.05)/0.01 \approx 760$$
 Formamos un conjunto de entrenamiento con $$m$$ elementos, para $$m=e^0,e^{1/2},e^1,…,mH$$, donde $$mH$$ es la complejidad de $$S$$ para un parámetro de confianza y un error de 0.01. Graficamos los puntos de cada conjunto de entrenamiento. 
 Graficamos los errores de generalización $$L(D,f)$$ y empírico $$LS$$ para cada hipótesis en $$H$$. Obtén algún rectángulo hS que minimice $$LS$$ y grafícalo en $$X$$.
+![Image](Muestras1.png)
+![Image](Muestras2.png)
+
+![Image](LSvsLD.png)
 
 ### Para cada valor de $$m$$, forma 1000 conjuntos de entrenamiento, selecciona $$hS$$ en cada caso y haz un histograma del error $$L(D,f)$$.
+![Image](LD1.png)
+![Image](LD2.png)
+![Image](LD3.png)
 
 ### Si seleccionas un valor $$\epsilon$$ del error de generalización $$L(D,f)$$, ¿cuántos puntos del histograma tienen error de generalización menor a $$\epsilon$$?
 
