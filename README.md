@@ -1,7 +1,10 @@
 {% include mathjax.html %}
-
 # Introducción al modelo de aprendizaje PAC
+# Ejercicios
+[PAC](#pac)
+[Perceptron](#perceptron)
 
+# PAC
 Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
 
 Para poner en práctica los conceptos aprendidos, proponemos un problema de clasificación. Supongamos que tenemos un cuadrado $$X = [0,2] \times [0,2]$$ y queremos clasificar los puntos de $$X$$ en dos tipos: los que pertenecen a $$X_0$$ y los que pertenecen a $$X_1$$, donde $$X_1 = [1-\frac{1}{\sqrt 2},1+\frac{1}{\sqrt 2}] \times [1-\frac{1}{\sqrt 2},1+\frac{1}{\sqrt 2}]$$ y $$X_0 = X - X_1$$.
@@ -127,3 +130,6 @@ Para cada valor de $$m$$, formamos 1000 conjuntos de entrenamiento, selecciona $
 ### Conclusión
 
 Como podemos observar en los resultados obtenidos, la complejidad de la muestra $$m_H = log(\mid H \mid/\delta)/\epsilon$$ nos da en la práctica el número de muestras suficientes para asegurarnos que el error de generalización obtenido con el proceso de ERM sea menor que $$\epsilon$$ casi siempre (o con probabilidad de $$1-\delta$$). Y esto es justamente lo que queríamos comprobar de la teoría.
+
+# Perceptron
+
