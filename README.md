@@ -1,8 +1,8 @@
 {% include mathjax.html %}
-# Introducción al modelo de aprendizaje PAC
-# Ejercicios
-[PAC](#pac)
-[Perceptron](#perceptron)
+### Ejercicios
+Introducción al modelo de aprendizaje PAC [PAC](#pac)
+
+Modelo PAC generalizado y predictores lineales [Perceptron](#perceptron)
 
 # PAC
 Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
@@ -133,3 +133,8 @@ Como podemos observar en los resultados obtenidos, la complejidad de la muestra 
 
 # Perceptron
 
+### Implementación del algoritmo del perceptron
+
+### Predictor
+
+### Muestras
