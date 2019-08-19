@@ -2,11 +2,11 @@
 
 # Índice
 
-[Introducción al modelo de aprendizaje PAC](#introducción-al-modelo-de-aprendizaje-PAC)
+[Introducción al modelo de aprendizaje PAC](#modelo-de-aprendizaje-PAC)
 
 [Modelo PAC generalizado y predictores lineales: Perceptron](#modelo-pac-generalizado-y-predictores-lineales-perceptron)
 
-# Introducción al modelo de aprendizaje PAC
+# Modelo de aprendizaje PAC
 
 Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
 
@@ -136,8 +136,72 @@ Como podemos observar en los resultados obtenidos, la complejidad de la muestra 
 
 # Modelo PAC generalizado y predictores lineales: Perceptron
 
+Problemas 4, 7 del capítulo 3, problema 1 del capítulo 4, problema 3 del capítulo 9. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/Perceptron.ipynb)
+
+```markdown
+```
+
 ### Implementación del algoritmo del perceptron
+
+Obtener una muestra
+
+```markdown
+# Obtener una muestra de m elementos
+
+def getSample(m,d,w):
+S = np.random.uniform(-1000,1000,(m,d))
+y = []
+for i in range(len(S)):
+x = np.r*[1,S[i]]
+y.append(np.sign(np.dot(w,x)))
+return np.c*[S,y]
+```
+
+```markdown
+# Algoritmo para encontrar el vector clasificador
+
+def getPerceptron(S,d):
+w = np.zeros(d+1)
+bien*clasificados = 0
+pasos = 0
+registro = [w]
+while bien_clasificados < len(S):
+bien_clasificados = 0
+for i in range(len(S)):
+x = np.r*[1,S[i][:-1]]
+clasificacion = np.sign(np.dot(w,x))
+if clasificacion == S[i][-1]:
+bien_clasificados += 1
+else:
+w = w + S[i][-1]\*x
+pasos += 1
+registro.append(w)
+return [w,pasos,registro]
+```
 
 ### Predictor
 
+![Image](imgs/perceptron/predictor.png)
+
 ### Muestras
+
+![Image](imgs/perceptron/muestra1.png)
+![Image](imgs/perceptron/muestra2.png)
+
+Normas de las muestras
+![Image](imgs/perceptron/normaVsMuestra1.png)
+![Image](imgs/perceptron/normaVsMuestra2.png)
+
+### Secuencia de predictores
+
+![Image](imgs/perceptron/secuenciaPredictores1.png)
+![Image](imgs/perceptron/secuenciaPredictores2.png)
+
+Pasos
+![Image](imgs/perceptron/pasosVsMuestra1.png)
+![Image](imgs/perceptron/pasosVsMuestra2.png)
+![Image](imgs/perceptron/pasosVsMuestra3.png)
+
+### Predictor vs Muestra
+
+![Image](imgs/perceptron/predictorYmuestra.png)
