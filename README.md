@@ -1,10 +1,13 @@
 {% include mathjax.html %}
-### Ejercicios
-Introducción al modelo de aprendizaje PAC [PAC](#pac)
 
-Modelo PAC generalizado y predictores lineales [Perceptron](#perceptron)
+# Índice
 
-# PAC
+[Introducción al modelo de aprendizaje PAC](#introducción-al-modelo-de-aprendizaje-PAC)
+
+[Modelo PAC generalizado y predictores lineales: Perceptron](#modelo-pac-generalizado-y-predictores-lineales-perceptron)
+
+# Introducción al modelo de aprendizaje PAC
+
 Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
 
 Para poner en práctica los conceptos aprendidos, proponemos un problema de clasificación. Supongamos que tenemos un cuadrado $$X = [0,2] \times [0,2]$$ y queremos clasificar los puntos de $$X$$ en dos tipos: los que pertenecen a $$X_0$$ y los que pertenecen a $$X_1$$, donde $$X_1 = [1-\frac{1}{\sqrt 2},1+\frac{1}{\sqrt 2}] \times [1-\frac{1}{\sqrt 2},1+\frac{1}{\sqrt 2}]$$ y $$X_0 = X - X_1$$.
@@ -113,25 +116,25 @@ return EMRh
 La complejidad de la muestra $$m_H$$ para $$\delta = 0.05, \epsilon = 0.01$$ es $$m_H = ln(\mid H \mid/\delta)/\epsilon = ln(100/0.05)/0.01 \approx 760$$.
 
 Formamos un conjunto de entrenamiento con $$m$$ elementos, para $$m=e^0,e^{1/2},e^1,…,mH$$. Para cada uno de estos conjuntos de entrenamiento, graficamos los puntos seleccionados en $$X$$ y la hipótesis resultante del proceso ERM. Podemos notar cómo es que a mayor cantidad de muestras, la hipótesis obtenida se acerca cada ver al valor real. Para una muestra de 665 puntos, la $$h_S$$ obtenida es $$0.029293...$$, mientras que el valor real es de $$0.29289...$$.
-![Image](Muestras1.png)
-![Image](Muestras2.png)
+![Image](imgs/pac/Muestras1.png)
+![Image](imgs/pac/Muestras2.png)
 
 Ahora, graficamos los errores de generalización $$L(D,f)$$ y empírico $$LS$$ para cada hipótesis en $$H$$. Nótese que el error de generalización tiene un mínimo, 0, justo en $$1-\frac{1}{\sqrt 2} = 0.29289...$$. Además, los errores empíricos aproximan bastante bien al error de generalización, que es lo que se espera que pase para muestras suficientemente grandes.
 
-![Image](LSvsLD.png)
+![Image](imgs/pac/LSvsLD.png)
 
 ### Errores de generalización para distintos tamaños de muestra
 
 Para cada valor de $$m$$, formamos 1000 conjuntos de entrenamiento, selecciona $$h_S$$ en cada caso y hacemos un histograma del error $$L_{(D,f)}$$. Nótese que a medida que aumentamos el tamaño de las muestras, los errores de generalización van disminuyendo y se empiezan a acumular en 0, existiendo cada vez menos excepciones de errores que sobrepasan al $$\epsilon$$ seleccionado.
-![Image](LD1.png)
-![Image](LD2.png)
-![Image](LD3.png)
+![Image](imgs/pac/LD1.png)
+![Image](imgs/pac/LD2.png)
+![Image](imgs/pac/LD3.png)
 
 ### Conclusión
 
 Como podemos observar en los resultados obtenidos, la complejidad de la muestra $$m_H = log(\mid H \mid/\delta)/\epsilon$$ nos da en la práctica el número de muestras suficientes para asegurarnos que el error de generalización obtenido con el proceso de ERM sea menor que $$\epsilon$$ casi siempre (o con probabilidad de $$1-\delta$$). Y esto es justamente lo que queríamos comprobar de la teoría.
 
-# Perceptron
+# Modelo PAC generalizado y predictores lineales: Perceptron
 
 ### Implementación del algoritmo del perceptron
 
