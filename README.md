@@ -2,7 +2,7 @@
 
 # Índice
 
-[Introducción al modelo de aprendizaje PAC](#modelo-de-aprendizaje-PAC)
+[Introducción al modelo de aprendizaje PAC](#modelo-de-aprendizaje-pac)
 
 [Modelo PAC generalizado y predictores lineales: Perceptron](#modelo-pac-generalizado-y-predictores-lineales-perceptron)
 
@@ -136,7 +136,7 @@ Como podemos observar en los resultados obtenidos, la complejidad de la muestra 
 
 # Modelo PAC generalizado y predictores lineales: Perceptron
 
-Problemas 4, 7 del capítulo 3, problema 1 del capítulo 4, problema 3 del capítulo 9. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/Perceptron.ipynb)
+Implementación del algoritmo de perceptron. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/Perceptron.ipynb)
 
 ```markdown
 ```
@@ -181,27 +181,27 @@ return [w,pasos,registro]
 
 ### Predictor
 
-![Image](imgs/perceptron/predictor.png)
+![Image](imgs/perceptron/predictor.PNG)
 
 ### Muestras
 
-![Image](imgs/perceptron/muestra1.png)
-![Image](imgs/perceptron/muestra2.png)
+![Image](imgs/perceptron/muestra1.PNG)
+![Image](imgs/perceptron/muestra2.PNG)
 
 Normas de las muestras
-![Image](imgs/perceptron/normaVsMuestra1.png)
-![Image](imgs/perceptron/normaVsMuestra2.png)
+![Image](imgs/perceptron/normaVsMuestra1.PNG)
+![Image](imgs/perceptron/normaVsMuestra2.PNG)
 
 ### Secuencia de predictores
 
-![Image](imgs/perceptron/secuenciaPredictores1.png)
-![Image](imgs/perceptron/secuenciaPredictores2.png)
+![Image](imgs/perceptron/secuenciaPredictores1.PNG)
+![Image](imgs/perceptron/secuenciaPredictores2.PNG)
 
 Pasos
-![Image](imgs/perceptron/pasosVsMuestra1.png)
-![Image](imgs/perceptron/pasosVsMuestra2.png)
-![Image](imgs/perceptron/pasosVsMuestra3.png)
+![Image](imgs/perceptron/pasosVsMuestra1.PNG)
+![Image](imgs/perceptron/pasosVsMuestra2.PNG)
+![Image](imgs/perceptron/pasosVsMuestra3.PNG)
 
 ### Predictor vs Muestra
 
-![Image](imgs/perceptron/predictorYmuestra.png)
+![Image](imgs/perceptron/predictorYmuestra.PNG)
