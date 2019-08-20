@@ -161,6 +161,7 @@ def getPerceptron(S,d):
 ```
 ### Predictor
 Suponeos que el predictor verdader está dado por $$w = (-1,1,1)$$. A continuación se muestra la frontera entre ambas clases, definida por este predictor:
+
 ![Image](imgs/perceptron/predictor.PNG)
 
 ### Obtener muestra
@@ -177,25 +178,31 @@ def getSample(m,d,w):
 ```
 ### Muestras
 Podemos observar las muestras obtenidas para dos iteraciones con $$m=100$$
+
 ![Image](imgs/perceptron/muestra1.PNG)
 ![Image](imgs/perceptron/muestra2.PNG)
 
 Ahora, para cada $$m=1,2,...,1000$$, formamos 100 conjuntos de entrenamiento, y calculamos el promedio de las normas máximas de los elementos de cada conjunto de entrenamiento. A continuación se muestra cómo escala este promedio respecto al tamaño de muestra.
+
 ![Image](imgs/perceptron/normaVsMuestra1.PNG)
 ![Image](imgs/perceptron/normaVsMuestra2.PNG)
+
 Como se puede observar, las normas máximas aumentan de magnitud conforme el tamaño de la muestra aumenta, y tiende a la norma máxima posible en nuestra distribución.
 
 ### Actualizaciones del predictor
 A continuación se muestran el número de actualizaciones requeridas para diferentes conjuntos de muestra, respecto al tamaño de los mismos. Como podemos observar, hay ciertos picos en los cuales el algoritmo realiza muchos pasos, pero sin contar esas excepciones o casos especiales, pareciera ser que la cantidad de actualizaciones crece de manera lineal respecto al tamaño de muestra, respecto a una norma de elementos de prueba máxima dada.
+
 ![Image](imgs/perceptron/pasosVsMuestra1.PNG)
 ![Image](imgs/perceptron/pasosVsMuestra2.PNG)
 ![Image](imgs/perceptron/pasosVsMuestra3.PNG)
 
 ### Secuencia de predictores
 Ahora, se muestran dos secuencias de actualizaciones de los predictores. Recordemos que cada predictor representa una recta, pero también se puede representar como un vector tangente y perpendicular a esa recta, que sale del origen. A continuación se muestra la representación de vector, con cola en (0.0) y cabeza en los puntos azules. El punto naranja representa el resultado del algoritmo.
+
 ![Image](imgs/perceptron/secuenciaPredictores1.PNG)
 ![Image](imgs/perceptron/secuenciaPredictores2.PNG)
 
 ### Predictor vs Muestra
 Finalmente, mostramos el predictor obtenido con la última muestra $$(m=100)$$. Como se puede observar, cumple con clasificar correctamente la muestra y se acerca bastante al clasificador real.
+
 ![Image](imgs/perceptron/predictorYmuestra.PNG)
