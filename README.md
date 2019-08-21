@@ -135,6 +135,10 @@ Como podemos observar en los resultados obtenidos, la complejidad de la muestra 
 
 # Modelo PAC generalizado y predictores lineales: Perceptron
 
+### Problemas
+Problemas 4, 7 del capítulo 3, problema 1 del capítulo 4, problema 3 del capítulo 9.  [Ver tarea](files/perceptron/PAC_generalizado__perceptron.pdf)
+
+### Trabajo numérico
 Implementación del algoritmo de perceptron. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/Perceptron.ipynb)
 
 A continuación implementamos el algoritmo del perceptrón. Consideramos la clasificación binaria en $$R^2$$, bajo el supuesto de realizabilidad en la clase de predictores lineales.
