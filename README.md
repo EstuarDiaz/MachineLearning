@@ -215,16 +215,24 @@ Finalmente, mostramos el predictor obtenido con la última muestra $$(m=100)$$. 
 
 # Teorema NFL y dimension VC
 
-## Problemas
+### Problemas
 Problemas 1,2 del capítulo 5, problemas 5, 7 y 9 del capítulo 9.  [Ver tarea](files/dimensionVC/Teorema_NFL_y_dimension_VC.pdf)
 
 ### Shattering
+Consideremos la siguiente clase de hipótesis: $\mathcal{H} = \{R_{a,b,c,d}:a\leq b, c\leq d\}$, donde cada $R_{a,b,c,d} \subseteq \mathbb R^2$ es un rectángulo alineado con los ejes, i.e. $R_{a,b,c,d}  = \{(x,y) \in \mathbb R^2: a\leq x \leq b, c\leq y \leq d\}$.
+Sea ahora $S$ 
+![Image](imgs/vcdim/3shatter.PNG)
+Decimos entonces que $S$ es **roto** *(shatter)* por $\mathcal H$.
+
 
 ### Dimensión VC
+La dimensión VC de una clase de hipótesis $\mathcal H$ se define como $VCdim(\mathcal H) = \underset{S \subset X}{max} |S|$, donde $S$ es roto por $\mathcal H$.
+  
+En el ejemplo anterior, $VCdim(\mathcal H) = 4$.
 
 ### Aprendibilidad
-Escriban un artículo sobre la dimensión VC de una clase de hipótesis, que contenga las siguientes ideas:
-- concepto de shattering de un subconjunto por una clase de hipótesis,
-- definición de dimensión VC de una clase de hipótesis,
-- relevancia para la aprendibilidad de una clase de hipótesis.
-Su artículo deberá ser formal, pero no demasiado formal. Busquen motivar las ideas anteriores con ejemplos ilustrativos.
+El concepto de dimensión VC es importante en el estudio del aprendizaje automático porque nos indica cuándo una clase de hipótesis es PAC aprendible.
+
+**Teorema:** Sea $\mathcal H$ una clase de hipótesis *(finita o infinita)*, si $dimVC(\mathcal H)$ es finita, entonces $\mathcal H$ es PAC aprendible.
+
+Por lo tanto, es fundamental conocer la dimensión VC de nuestras clases de hipótesis si queremos utilizarlas para aprendibilidad automática.
