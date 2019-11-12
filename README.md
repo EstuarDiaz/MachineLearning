@@ -6,6 +6,8 @@
 
 [Modelo PAC generalizado y predictores lineales: Perceptron](#modelo-pac-generalizado-y-predictores-lineales-perceptron)
 
+[Teorema NFL y dimensión VC](#teorema-nfl-y-dimension-vc)
+
 # Modelo de aprendizaje PAC
 
 Ejercicio 3 del capítulo 2 de Understanding machine learning. [Ver el código del programa](https://github.com/EstuarDiaz/MachineLearning/blob/master/PAC.ipynb)
@@ -210,3 +212,19 @@ Ahora, se muestran dos secuencias de actualizaciones de los predictores. Recorde
 Finalmente, mostramos el predictor obtenido con la última muestra $$(m=100)$$. Como se puede observar, cumple con clasificar correctamente la muestra y se acerca bastante al clasificador real.
 
 ![Image](imgs/perceptron/predictorYmuestra.PNG)
+
+# Teorema NFL y dimension VC
+
+## Problemas
+Problemas 1,2 del capítulo 5, problemas 5, 7 y 9 del capítulo 9.  [Ver tarea](files/dimensionVC/Teorema_NFL_y_dimension_VC.pdf)
+
+### Shattering
+
+### Dimensión VC
+
+### Aprendibilidad
+Escriban un artículo sobre la dimensión VC de una clase de hipótesis, que contenga las siguientes ideas:
+- concepto de shattering de un subconjunto por una clase de hipótesis,
+- definición de dimensión VC de una clase de hipótesis,
+- relevancia para la aprendibilidad de una clase de hipótesis.
+Su artículo deberá ser formal, pero no demasiado formal. Busquen motivar las ideas anteriores con ejemplos ilustrativos.
