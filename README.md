@@ -220,13 +220,20 @@ Problemas 1,2 del capítulo 5, problemas 5, 7 y 9 del capítulo 9.  [Ver tarea](
 
 ### Shattering
 Consideremos la siguiente clase de hipótesis: $\mathcal{H} = \{R_{a,b,c,d}:a\leq b, c\leq d\}$, donde cada $R_{a,b,c,d} \subseteq \mathbb R^2$ es un rectángulo alineado con los ejes, i.e. $R_{a,b,c,d}  = \{(x,y) \in \mathbb R^2: a\leq x \leq b, c\leq y \leq d\}$.
-Sea ahora $S$ 
+Sea ahora $S$ un subconjunto de 3 puntos sobre $\mathbb R$ como se muestra en la figura. Podemos preguntarnos si es posible clasificar todos los subconjuntos de $S$ en una clase positiva y el resto en una clase negativa.
+
 ![Image](imgs/vcdim/3shatter.PNG)
-Decimos entonces que $S$ es **roto** *(shatter)* por $\mathcal H$.
+
+Como podemos observar, con la clase de hipótesis propuesta $\mathcal H$, es posible obtener cada subconjunto de $S$. Decimos entonces que $S$ es **roto** *(shatter)* por $\mathcal H$.
+
+Sin embargo, pueden existir conjuntos de muestra $S'$ para los cuales existen subconjuntos que no puedan ser rotos, por ejemplo $\mathcal H$ no puede romper al siguiente conjunto:
+
+![Image](imgs/vcdim/5shatter.PNG)
 
 
 ### Dimensión VC
-La dimensión VC de una clase de hipótesis $\mathcal H$ se define como $VCdim(\mathcal H) = \underset{S \subset X}{max} |S|$, donde $S$ es roto por $\mathcal H$.
+La dimensión VC de una clase de hipótesis $\mathcal H$ se define como el tamaño del subconjunto más grande que puede ser roto por $\mathcal H$.
+Es decir, $VCdim(\mathcal H) = \underset{S \subset X}{max} |S|$, donde $S$ es roto por $\mathcal H$.
   
 En el ejemplo anterior, $VCdim(\mathcal H) = 4$.
 
